@@ -1,4 +1,4 @@
-git上传到gitHub
+﻿git上传到gitHub
 
 ++首先在github账户上新建一个远程仓库，一般与本地库名字相同
 	注意创建的时候不要初始化readme。。（不要勾选创建readme的按钮！）
@@ -18,7 +18,7 @@ git上传到gitHub
 	git push 远程库别名！ 推送分支 //比如：git push origin master
 	其中 origin 就是刚刚创建的远程库别名！master是默认的分支，因为刚刚没有创建别的分支！
 
-++克隆项目
+++克隆项目：
 	要在另外的文件夹里面操作
 	命令：git cclone 地址！ //比如 git clone https://github.com/MLYGuiHub09/vuePeoject20190810.git
 	
