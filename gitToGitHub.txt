@@ -1,0 +1,24 @@
+git上传到gitHub
+
+++首先在github账户上新建一个远程仓库，一般与本地库名字相同
+	注意创建的时候不要初始化readme。。（不要勾选创建readme的按钮！）
+++本地库初始化：
+	命令：git init
+	操作步骤：在新建的项目文件夹上启动git bash here，在命令窗口操作：
+			1. git init //初始化	Initialized empty Git repository in F:/Gitstore/vueProject20190810/.git/
+			   之后会在文件夹里面有一个.git的文件夹目录
+	注意：.git目录在存放的是本地库相关的子目录和文件，不要删除也不要乱修改	
+
+++在本地库创建远程库连接别名：为了方便push的时候，不再需要去远程库查看库的地址；
+	操作步骤：git remote add 别名！ 远程库地址！//比如git remote add origin https://github.com/MLYGuiHub09/vuePeoject20190810.git
+	其中origin 就是别名  https://github.com/MLYGuiHub09/vuePeoject20190810.git 就是一个远程库的连接地址
+	git remote -v 查看别名
+	
+++push 向远程库推送代码
+	git push 远程库别名！ 推送分支 //比如：git push origin master
+	其中 origin 就是刚刚创建的远程库别名！master是默认的分支，因为刚刚没有创建别的分支！
+
+++克隆项目
+	要在另外的文件夹里面操作
+	命令：git cclone 地址！ //比如 git clone https://github.com/MLYGuiHub09/vuePeoject20190810.git
+	
