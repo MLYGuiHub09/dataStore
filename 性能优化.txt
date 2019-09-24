@@ -1,0 +1,20 @@
+++微信小程序 性能优化
+1.Promise异步解决方案：
+	conse fPromise = fn=>obj=>{
+		return new Promise((resolve,reject)=>{
+			obj.complete = obj.success = (res){
+				resolve(res)
+			}
+			obj.fail = (err)=>{
+			reject(err)
+			}
+			fn(obj);
+		})
+	}
+	
+2.微信小程序中图片的优化：
+	首屏图片本地加载；
+	内容类图片迁移至cdn
+3.分包加载
+	首次启动，先下载小程序主包
+	进入某个分包页面时，下载对应分包
