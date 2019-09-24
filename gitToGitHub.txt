@@ -21,4 +21,6 @@
 ++克隆项目：
 	要在另外的文件夹里面操作
 	命令：git cclone 地址！ //比如 git clone https://github.com/MLYGuiHub09/vuePeoject20190810.git
-	
+++推送文件到远程仓库：
+1.git add xxx.txt//比如 git add git.txt;
+2.git commit -m '完成提交！'	
