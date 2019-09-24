@@ -1,0 +1,4 @@
+++微信中使用扩展组件：
+	1.在程序的文件夹目录下进入cmd
+	2.输入 cnpm/npm install //这个是为了下载npm包，输入完之后会在目录下多一个mode_modlues的文件夹
+	3.导入自己想要的包//比如：cnpm i weui-miniprogram
