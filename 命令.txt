@@ -1,0 +1,61 @@
+GIT常用命令
+
+git config --global user.name "姓名" : 设置GIT的用户名
+git config --global user.email "邮箱" : 设置GIT的邮箱
+
+git init : 初始化GIT仓库
+
+git add [文件/文件夹] : 把工作区的文件加入到暂存区
+git commit -m '日志内容' : 把暂存区的内容添加到HEAD
+git commit --amend -m '日志内容' : 修改上次提交的日志内容
+
+git ls-files -s : 查看暂存区内容
+git ls-tree HEAD : 查看分支的内容
+
+git log : 查看提交日志 
+    加参数:--pretty=oneline 能让日志打印一行
+git status : 查看变动的信息 
+    加参数:-s 显示精简模式
+git diff : 显示暂存区和工作区的代码差异
+    加参数:HEAD 显示工作区与分支的代码差异
+    加参数:--cached 文件名 显示暂存区和上一个commit的代码差异
+git reflog : 查看历史版本
+
+git reset --hard HEAD^ : 当前分支回退到上一个版本,^的个数决定回到上多少个版本
+    --hard : HEAD/工作区/暂存区一同回退到指定版本
+
+git reset --hard ID : 当前HEAD回退到指定ID的版本,可以通过git log命令查看版本的ID
+git show HEAD : 显示当前最新版本
+
+git checkout -- 文件名 : 把某个文件从暂存区恢复到工作区
+git checkout 版本号 -- 文件名 : 把某个文件的某个版本从暂存区恢复到工作区,可以通过git log命令查看版本的ID
+
+git rm 文件名 : 从工作区和暂存区删除某个文件,如果要在分支中也删除则需要手动commit
+
+git mv 原文件名 新文件名 : 修改工作区中文件名称,可以通过git status命令查看变动信息
+
+git blame 文件名 : 追踪工作区文件内容的来源
+    加参数-L 开始行,+显示行数 : 从开始行追踪指定的行数
+
+$ touch .gitignore : 创建git的忽略文件
+    
+git stash save 日志 : 临时存储当前的内容
+git stash list : 查看临时存储的列表
+git stash pop stash@{num} : 恢复到之前临时存储的内容,num为临时存储的序号
+git stash clear : 清空所有临时存储的内容
+
+
+git remote add origin 远程仓库地址 : 设置远程仓库
+git push -u origin master : 第一次推送必须使用-u参数,以后就可以直接git push即可
+git clone 远程仓库地址 : 从远程仓库下载代码
+
+ssh-keygen -t rsa -C "邮箱" : 创建一对钥匙
+
+git branch : 查看分支
+git branch 名称 : 创建分支
+git checkout 名称 : 切换分支
+git checkout -b 名称 : 创建+切换分支
+git branch -D 名称 : 删除分支
+git push origin --delete 名称 : 删除远程分支
+git merge 名称 : 把某分支合并到当前分支
+
