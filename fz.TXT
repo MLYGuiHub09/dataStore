@@ -1,0 +1,18 @@
+git上从仓库中拉取项目：
+git clone https://github.com/MLYGuiHub09/dataStore.git
+查看所有分支：
+ git branch --all
+//* 
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/fz
+  remotes/origin/master
+**/
+创建分支：
+git checkout fz
+进入分支：
+git checkout fz
+然后将写好的东西push到分支fz:
+git add xxx.xxx
+git commit -m 'xxx'
+git push
