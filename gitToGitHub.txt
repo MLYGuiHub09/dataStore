@@ -24,3 +24,15 @@
 ++推送文件到本地head中：（要先放在本地head中，之后才能通过git push origin master命令推送到远程仓库）
 1.git add xxx.txt//比如 git add git.txt;
 2.git commit -m '完成提交！'	
+
+l  查看当前分支 （git branch）
+
+l  创建分支 （git branch 分支名）
+
+l  切换分支（git checkout 分支名）
+
+l  分支上的常规操作
+
+l  分支的合并 （git branch master + git merge 分支名）
+
+l  分支的删除（git branch -d 分支名）
