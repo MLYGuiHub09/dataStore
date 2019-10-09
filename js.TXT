@@ -1,4 +1,4 @@
-事件冒泡与捕获：
+++事件冒泡与捕获：
 点击某个元素后，由最顶层父类元素一直追踪到具体的元素，这个过程称为捕获；
 反之，从具体元素事件触发后，往上具有相同事件的父类事件也触发，知道最顶层的类似父类，这个过程称为冒泡；
 
@@ -10,3 +10,52 @@ addEventListener方法是添加事件的方法，第三个参数的设置是：
 ++true：事件由捕获阶段触发		
 
 stopPropagation（）方法是阻止事件传递的方法；//冒泡或者捕获都是；
+
+++事件的事件源：
+event.target
+
+++事件代理(事件委托)
+由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，
+由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）。
+1.优点：
+	·减少内存消耗，提高性能
+	·动态绑定事件
+比如：	
+	// 给父层元素绑定事件
+document.getElementById('list').addEventListener('click', function (e) {
+  // 兼容性处理
+  var event = e || window.event;
+  var target = event.target || event.srcElement;
+  // 判断是否匹配目标元素
+  if (target.nodeName.toLocaleLowerCase === 'li') {
+    console.log('the content is: ', target.innerHTML);
+  }
+});
+
+获取到dom元素之后，能做的事情：
+document.getElementsByClassName('li1')[0] // <li class="li1">hello</li>
+	·可以获取内容：innerHTML //hello；
+	·可以获取类名等
+	
+++js获取dom元素的8种方法：
+	通过ID获取（getElementById）
+	通过name属性（getElementsByName）//只有含有name属性的元素(表单元素)才能通过name属性获取
+	通过标签名（getElementsByTagName）//就是获取标签：比如input,li；getElementsByTagName（'input'）
+	通过类名（getElementsByClassName）
+	获取html的方法（document.documentElement）
+	获取body的方法（document.body）
+	特殊的两种：
+	通过css选择器获取一个元素（querySelector）
+	document.querySelector("#demo");
+	通过选择器获取一组元素（querySelectorAll）
+	
+	所有获取DOM对象的方法中，只有getElementById()和querySelector()这两个方法直接
+	返回的DOM对象本身，可直接为其绑定事件。
+getElementXXX类型的方法，除了通过Id获取元素，其他都返回一个集合，
+如果需要取到具体的DOM元素，需要加索引，
+如：document.getElementsByClassName(“box”)[0] =>获取class为box的所有元素中的第一个DOM元素。
+querySelector()与querySelectorAll()两者的联系与区别：
+联系： 两者括号中的取值都是选择器
+区别： 当有多个class相同的元素时，使用querySelector()方法只能获取到第一个class为box的元素，
+而querySelectorAll()获取到了所有class为box的元素集合。
+————————————————
