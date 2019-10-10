@@ -31,6 +31,13 @@ git status
 ++查看所有分支
 git branch --all
 
+++将分支合并(fz)到主分支master的时候：
+1.首先在分支（fz）上提交//一般要先更新 git pull，之后 git add  ..  git commit -m '' git push
+2.然后先换到主分支 // git checkout master 
+3.在主分支上合并需要合并的分支 // git merge fz 
+这个时候还要将合并的提交啊！ //git push origin master
+
+
 
 
 l  查看当前分支 （git branch）
