@@ -37,6 +37,12 @@ git branch --all
 3.在主分支上合并需要合并的分支 // git merge fz 
 这个时候还要将合并的提交啊！ //git push origin master
 
+++删除远程仓库上的文件 //如删除 rm.txt
+方法一：直接在远程仓库中删除 //傻瓜操作 ，点击删除就好 ，会把本地的文件也删除了
+方法二：
+1.git rm rm.txt //在工作区和暂存区删除文件 
+如果是要删除分支上的文件（即文件是在分支上的） 需要commit //git commit -m 'rm' git push
+
 
 
 
