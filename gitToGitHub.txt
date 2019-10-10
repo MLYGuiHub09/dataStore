@@ -25,6 +25,14 @@
 1.git add xxx.txt//比如 git add git.txt;
 2.git commit -m '完成提交！'	
 
+++查看当前分支的状态：//就是看有什么文件更改了
+git status
+
+++查看所有分支
+git branch --all
+
+
+
 l  查看当前分支 （git branch）
 
 l  创建分支 （git branch 分支名）
